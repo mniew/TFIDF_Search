@@ -53,7 +53,7 @@ public class DemoApplication {
 				for (IndexEntry info : entry) {
 					System.out.println(info.getId() + " : " + info.getScore() );
 				}
-			}
+
 			else if(input.equals("q")){
 				return;
 			}
