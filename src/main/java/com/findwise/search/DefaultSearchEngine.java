@@ -42,21 +42,18 @@ public class DefaultSearchEngine implements SearchEngine {
         }
     }
 
+    //calculates frequency of a particular word in a documents content.
     public Integer calculateFrequency(String word, List<String> words) {
-        //calculates frequency of a particular word in a documents content.
         return words
                 .stream()
                 .mapToInt(w -> w.equals(word) ? 1 : 0)
                 .sum();
     }
 
+    //creates list of words that are separated by space or newline
+    //to lowercase required to avoid any case sensitivity problems
     public List<String> splitContent(@org.jetbrains.annotations.NotNull String content){
-
-        List<String> info;
-
-        info = Arrays.asList(content.toLowerCase(Locale.ROOT).split("[\\s]+")); //creates list of words that are separated by space or newline
-        //to lowercase required to avoid any case sensitivity problems
-
+        List<String> info = Arrays.asList(content.toLowerCase(Locale.ROOT).split("[\\s]+")); //creates list of words that are separated by space or newline
         return(info);
     }
 

@@ -1,13 +1,10 @@
 package com.findwise;
 
 import com.findwise.search.DefaultSearchEngine;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 
 import java.util.List;
 import java.util.Scanner;
 
-@SpringBootApplication
 public class DemoApplication {
 
 	public static void main(String[] args) {
@@ -25,7 +22,6 @@ public class DemoApplication {
 			System.out.println("'a' - to add a document");
 			System.out.println("'s' - to search documents");
 			System.out.println("'t' - to search and sort by TFIDF score");
-			System.out.println("'p' - to print current items in the hashset");
 			System.out.println("'q' - to quit");
 			input = scanner.nextLine().trim();
 			if(input.equals("a")){
@@ -55,9 +51,7 @@ public class DemoApplication {
 				System.out.println("Unknown input please try again.");
 			}
 
-		}while (!scanner.nextLine().equals("n"));
-//		SpringApplication.run(DemoApplication.class, args);
-
+		}while (input != "q");
 	}
 
 }
