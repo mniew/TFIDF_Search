@@ -1,5 +1,5 @@
 # TFIDF_Search
-The purpose of this project was to create a a simple search engine in Java. 
+The purpose of this project was to create a simple search engine in Java. 
 The search engine was implemented as an inverted index that runs in memory and can return a result list that is sorted by TF-IDF .
 
 # HOW TO USE
