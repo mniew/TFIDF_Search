@@ -2,9 +2,14 @@ package com.findwise.model;
 
 import com.findwise.IndexEntry;
 
-public class IndexEntryClass implements IndexEntry {
+public class DefaultIndexEntry implements IndexEntry {
     private String id;
     private double score;
+
+    public DefaultIndexEntry(String id, double score) {
+        this.id = id;
+        this.score = score;
+    }
 
     @Override
     public String getId() {

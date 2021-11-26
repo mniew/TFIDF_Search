@@ -1,8 +1,6 @@
 package com.findwise;
 
-import com.findwise.model.Document;
-import com.findwise.search.DocumentSearchEngine;
-import org.springframework.boot.SpringApplication;
+import com.findwise.search.DefaultSearchEngine;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
@@ -16,7 +14,7 @@ public class DemoApplication {
 		System.out.println(" Search Engine");
 		Scanner scanner = new Scanner(System.in);
 		String input;
-		DocumentSearchEngine searchEngine= new DocumentSearchEngine();
+		DefaultSearchEngine searchEngine= new DefaultSearchEngine();
 
 		searchEngine.indexDocument("document 1","the red fox jumped over the brown dog fox");
 		searchEngine.indexDocument("document 2","the lazy brown dog sat in the corner");
@@ -30,14 +28,12 @@ public class DemoApplication {
 			System.out.println("'p' - to print current items in the hashset");
 			System.out.println("'q' - to quit");
 			input = scanner.nextLine().trim();
-			if (input.equals("p")){
-				searchEngine.printHashset();
-			}else if(input.equals("a")){
+			if(input.equals("a")){
 				System.out.println("Please enter the document name you would like to add");
-				String docname = scanner.nextLine().trim();
+				String docName = scanner.nextLine().trim();
 				System.out.println("Please enter the content of the document");
 				String content = scanner.nextLine().trim();
-				searchEngine.indexDocument(docname,content);
+				searchEngine.indexDocument(docName,content);
 			}else if(input.equals("s")){
 				System.out.println("Please enter the word you would like to search:");
 				String searchTerm = scanner.nextLine().trim();
@@ -53,11 +49,9 @@ public class DemoApplication {
 				for (IndexEntry info : entry) {
 					System.out.println(info.getId() + " : " + info.getScore() );
 				}
-
-			else if(input.equals("q")){
+			}else if(input.equals("q")){
 				return;
-			}
-			else{
+			}else{
 				System.out.println("Unknown input please try again.");
 			}
 
