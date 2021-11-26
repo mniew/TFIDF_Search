@@ -33,7 +33,6 @@ public class DemoApplication {
 			}else if(input.equals("s")){
 				System.out.println("Please enter the word you would like to search:");
 				String searchTerm = scanner.nextLine().trim();
-//				searchEngine.search(searchTerm);
 				List<IndexEntry> entry = searchEngine.search(searchTerm);
 				for (IndexEntry info : entry) {
 					System.out.println(info.getId() + " : " + info.getScore() );

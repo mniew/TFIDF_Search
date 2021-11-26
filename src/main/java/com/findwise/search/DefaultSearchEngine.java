@@ -50,11 +50,10 @@ public class DefaultSearchEngine implements SearchEngine {
                 .sum();
     }
 
-    //creates list of words that are separated by space or newline
+    //creates list of words that are separated by space
     //to lowercase required to avoid any case sensitivity problems
     public List<String> splitContent(@org.jetbrains.annotations.NotNull String content){
-        List<String> info = Arrays.asList(content.toLowerCase(Locale.ROOT).split("[\\s]+")); //creates list of words that are separated by space or newline
-        return(info);
+        return(Arrays.asList(content.toLowerCase(Locale.ROOT).split("[\\s]+")));
     }
 
     @Override
